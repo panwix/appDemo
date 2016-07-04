@@ -1,53 +1,38 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
-import React, { Component } from 'react';
+import React, { Component }from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 
-class appDemo extends Component {
-  render() {
+class Email extends Component {
+  render(){
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <Text style={styles.text}>{this.props.name}</Text>
+        <Text style={styles.text}>{this.props.url}</Text>
       </View>
-    );
+    )
   }
 }
 
-const styles = StyleSheet.create({
+class App extends Component {
+  render(){
+    return(
+      <Email name='移动开发部' url='www.panwix.com'/>
+    )
+  }
+}
+
+var styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    paddingTop: 40,
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+  text:{
+    color: 'red',
+  }
+})
 
-AppRegistry.registerComponent('appDemo', () => appDemo);
+AppRegistry.registerComponent("appDemo", () => App);
