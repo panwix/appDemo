@@ -23,7 +23,7 @@
 4. 把上述步骤得到的ModuleID， MethodID， CallbackID和其它参数argus传给oc。
 5. oc接收到消息，通过模块配置表拿到对应的模块和方法（具体实现在__handleRequestNumber:moduleID:methodID:params:）
 6. RCTModuleMethod对js传过来的每一个参数进行处理
-7. oc模块方法调用完，执行block回调。
+7. oc模块方法调用完，执行block回调
 8. 调用到第六步说明的RCTModuleMethod生成的block。
 9. block里带着CallCallbackID和block传过来的参数去调用js里MessageQueue的方法invokeCallbackAndReturnFlushedQueue。
 10. MessageQueue通过ClassbackID找到响应的js callback方法
